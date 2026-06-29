@@ -1,0 +1,66 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: 100vh;
+}
+
+.user img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.spin1 {
+  animation-name: spin;
+}
+
+.spin2 {
+  animation-name: spin-reverse;
+}
+
+.user {
+  background-color: #d2be68;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #3d1414;
+    img {
+      animation-play-state: paused;
+    }
+  }
+}
+
+body {
+  background: linear-gradient(200deg, #3d1414, #d4b402);
+  min-height: 100vh;
+  margin: 0;
+}
